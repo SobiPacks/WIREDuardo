@@ -82,7 +82,12 @@ class Fun:
         await bot.say("https://cdn.discordapp.com/attachments/436290304606339073/461028851011551233/image.jpg")
         print("sexy")
     
+    @bot.command(pass_context=True)
+    aync def gg(ctx):
+        """gg"""
+        await bot.say("GG")
 
+    
 if __name__ == "__main__":
         for extension in startup_extensions:
             try:
