@@ -105,7 +105,13 @@ async def info(ctx):
     embed.set_footer(text="Created by Robert Jefferson")
     await bot.say(embed=embed)
     print("Information accesed")
-
+    
+@bot.command(pass_context = True)
+async def say(ctx, *args):
+    mesg = ' '.join(args)
+    await bot.delete_message(ctx.message)
+    return await bot.say(mesg)
+    
 @bot.command(pass_context=True)
 async def hello(ctx):
     """Salute the bot!"""
