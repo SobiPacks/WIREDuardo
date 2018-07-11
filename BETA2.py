@@ -19,25 +19,8 @@ async def on_ready():
     print("Bot Online")
     print(rando)
     await bot.change_presence(game=discord.Game(name="Splatoon 2"))
-    if rando == '1':
-        await bot.send_message(discord.Object(id='436290304606339073'), "Now with extra apples!")
-    if rando == '2':
-        await bot.send_message(discord.Object(id='436290304606339073'), "My controller is broken from the inside but cold in the outside, like a fish.")
-    if rando == '3':
-        await bot.send_message(discord.Object(id='436290304606339073'), "Can I get an amen?")
-    if rando == '4':
-        await bot.send_message(discord.Object(id='436290304606339073'), "I'm baaaaaaack!")
-    if rando == '5':
-        await bot.send_message(discord.Object(id='436290304606339073'), "Get fire up!")
-    if rando == '6':
-        await bot.send_message(discord.Object(id='436290304606339073'), "I don't have Discord Nitro :(")
-    if rando == '7':
-        await bot.send_message(discord.Object(id='436290304606339073'), "Everything made out of buttons and wires.")
-    if rando == '8':
-        await bot.send_message(discord.Object(id='436290304606339073'), "WHY AM I IN PAIN?")
-    if rando == '9':
-        await bot.send_message(discord.Object(id='436290304606339073'), "I have a big red dog kids.")
-
+    await bot.send_message(discord.Object(id='459871164974628886'), "BEEP BOOP")
+   
 #class Main_Commands():
     #def __init__(self, bot):
         #self.bot = bot
@@ -54,9 +37,9 @@ async def on_message(message):
         rob = await bot.get_user_info('400055843787243531')
         await bot.send_message(rob, "The user {0.author.mention} has reported someone".format(message))
         henry = await bot.get_user_info('258675615194939392')
-        await bot.send_message(henry, "Henry, alguien hizo .report".format(message))
+        await bot.send_message(henry, "The user {0.author.mention} has reported someone".format(message))
         rehan = await bot.get_user_info('310045671094747136')
-        await bot.send_message(rehan, "A user has sent a report request!".format(message))
+        await bot.send_message(rehan, "The user {0.author.mention} has reported someone".format(message))
 
     if message.content.upper().startswith('.RULES'):
         await bot.send_message(message.channel," #1 - Be respectul and kind towards others here. Anyone caught harassing or insulting others will receive a warning followed by a kick. \n #2 Dont advertise. Just dont. Its rude and annoying. \n #3 Keep all adult and nudity content away from here. Immediate ban for anyone posting obscenities. ")
@@ -79,11 +62,11 @@ async def on_message(message):
     if message.content.upper().startswith('.RULE 3'):
         await bot.send_message(message.channel,"#3 Keep all adult and nudity content away from here. Immediate ban for anyone posting obscenities. ")
 
-    if message.content.upper().startswith('.RULE4'):
-        await bot.send_message(message.channel,"#4 Please do not spam in the server. It is rude and unnecessary.")
+    #if message.content.upper().startswith('.RULE4'):
+        #await bot.send_message(message.channel,"#4 Please do not spam in the server. It is rude and unnecessary.")
 
-    if message.content.upper().startswith('RULE 4'):
-        await bot.send_message(message.channel,"##4 Please do not spam in the server. It is rude and unnecessary.")
+    #if message.content.upper().startswith('RULE 4'):
+        #await bot.send_message(message.channel,"##4 Please do not spam in the server. It is rude and unnecessary.")
 
     if message.content.upper().startswith('.YT'):
         await bot.send_message(message.channel,"https://www.youtube.com/channel/UCel2B-6wZhvQHRAKXmpm1Ew")
@@ -94,20 +77,27 @@ async def on_message(message):
     if message.content.upper().startswith('.PING'):
         await bot.send_message(message.channel,"PONG {0.author.mention}".format(message))
         
+    if message.content.upper().startswith('.HELP'):
+        await bot.send_message(message.channel,"Displaying all commands...")
+        await bot.send_message(message.channel," .help: Shows this \n .rules : Displays the rules \n .rules(number of rule): Displays specific rules \n .yt: Link to Eddie's channel! \n .boop: Boops someone \n .info: Shows info about the bot")
+        
     #if message.content.upper().startswith(''):
         #await bot.send_message(message.channel,"")
 #( ͡° ͜ʖ ͡°)
 
     await bot.process_commands(message)
 
-#@bot.command(pass_context=True)
-#async def info(ctx):
-    #"""Information about the bot"""
-    #embed=discord.Embed(title="The first Saucefam bot!", description="Functions: Being fun and playing music.", color=0x00FF00)
-    #embed.set_author(name="WIREDuardo")
-    #embed.set_footer(text="Created by Robert Jefferson")
-    #await bot.say(embed=embed)
-    #print("Information accesed")
+@bot.command(pass_context=True)
+async def boop(ctx, message):
+    await client.send_message(ctx.message.author, '{0.author.mention} booped you!'.format(message))                           
+@bot.command(pass_context=True)
+async def info(ctx):
+    """Information about the bot"""
+    embed=discord.Embed(title="The first Saucefam bot!", description="Functions: Being fun and playing music.", color=0x00FF00)
+    embed.set_author(name="WIREDuardo")
+    embed.set_footer(text="Created by Robert Jefferson")
+    await bot.say(embed=embed)
+    print("Information accesed")
 
 #if __name__ == "__main__":
         #for extension in startup_extensions:
