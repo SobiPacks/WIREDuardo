@@ -46,7 +46,13 @@ async def on_message(message):
         
     if message.content.upper().startswith('.BYE'):
         await bot.send_message(message.channel,"Hope to see you again soon {0.author.mention}! ;o;".format(message))
-
+        
+    if message.content.upper().startswith('.HI'):
+        await bot.send_message(message.channel,"Hello {0.author.mention}! :wave:".format(message))
+        
+    if message.content.upper().startswith('.GOODBYE'):
+        await bot.send_message(message.channel,"Hope to see you again soon {0.author.mention}! ;o;".format(message))
+        
     if message.content.upper().startswith('.RULES'):
         await bot.send_message(message.channel," #1 - Be respectul and kind towards others here. Anyone caught harassing or insulting others will receive a warning followed by a kick. \n #2 Dont advertise. Just dont. Its rude and annoying. \n #3 Keep all adult and nudity content away from here. Immediate ban for anyone posting obscenities. ")
 
