@@ -99,6 +99,9 @@ async def info(ctx):
     await bot.say(embed=embed)
     print("Information accesed")
 @bot.command
+async def rules(ctx):
+    """Shows da rulez"""
+
 @bot.command
 @bot.command
 
