@@ -103,30 +103,38 @@ async def info(ctx):
     embed.set_footer(text="Created by Robert Jefferson")
     await bot.say(embed=embed)
     print("Information accesed")
+
+@bot.command(pass_context=True)
+async def hello(ctx):
+    """Salute the bot!"""
+
+@bot.command(pass_context=True)
+async def bye(ctx):
+    """Say your goodbyes to the bot..."""
     
 @bot.command(pass_context=True)
 async def rules(ctx):
-    """Shows da rulez"""
+    """Shows da rulez."""
     
 @bot.command(pass_context=True)
 async def rule1(ctx):
-    """Shows rule 1"""
+    """Shows rule 1."""
     
 @bot.command(pass_context=True)
 async def rule2(ctx):
-    """Shows rule 2"""
+    """Shows rule 2."""
     
 @bot.command(pass_context=True)
 async def rule3(ctx):
-    """Shows rule 3"""
+    """Shows rule 3."""
     
 @bot.command(pass_context=True)
 async def yt(ctx):
-    """Link to Eddie's YouTube channel"""
+    """Link to Eddie's YouTube channel."""
 
-@bpt.command(pass_context=True)
+@bot.command(pass_context=True)
 async def spam(ctx):
-    """A naughty command"""
+    """A naughty command."""
 
 
 
