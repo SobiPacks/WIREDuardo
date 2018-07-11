@@ -34,8 +34,8 @@ async def on_message(message):
             return
         rob = await bot.get_user_info('400055843787243531')
         await bot.send_message(rob, "The user {0.author.mention} has reported someone".format(message))
-        henry = await bot.get_user_info('258675615194939392')
-        await bot.send_message(henry, "The user {0.author.mention} has reported someone".format(message))
+        #henry = await bot.get_user_info('258675615194939392')
+        #await bot.send_message(henry, "The user {0.author.mention} has reported someone".format(message))
         #rehan = await bot.get_user_info('310045671094747136')
         #await bot.send_message(rehan, "The user {0.author.mention} has reported someone".format(message))
         #tester = await bot.get_user_info('Tester ID')
