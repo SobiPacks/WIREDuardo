@@ -43,9 +43,6 @@ async def on_message(message):
         
     if message.content.upper().startswith('.HELLO'):
         await bot.send_message(message.channel,"Hello {0.author.mention}! :wave:".format(message))
-
-    if message.content.upper().startswith('NIGGER'):
-        await bot.delete_message(message)
         
     if message.content.upper().startswith('.BYE'):
         await bot.send_message(message.channel,"Hope to see you again soon {0.author.mention}! ;o;".format(message))
