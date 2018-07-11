@@ -88,7 +88,8 @@ async def on_message(message):
 
 @bot.command(pass_context=True)
 async def boop(ctx, message):
-    await client.send_message(ctx.message.author, '{0.author.mention} booped you!'.format(message))                           
+    """Boops someone"""
+    await client.send_message(ctx.message.author, 'Booped!')                           
 @bot.command(pass_context=True)
 async def info(ctx):
     """Information about the bot"""
@@ -97,6 +98,9 @@ async def info(ctx):
     embed.set_footer(text="Created by Robert Jefferson")
     await bot.say(embed=embed)
     print("Information accesed")
+@bot.command
+@bot.command
+@bot.command
 
 #if __name__ == "__main__":
         #for extension in startup_extensions:
