@@ -102,9 +102,6 @@ async def info(ctx):
 async def rules(ctx):
     """Shows da rulez"""
 
-@bot.command
-@bot.command
-
 #if __name__ == "__main__":
         #for extension in startup_extensions:
             #try:
