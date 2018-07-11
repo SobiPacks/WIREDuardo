@@ -38,6 +38,8 @@ async def on_message(message):
         await bot.send_message(henry, "The user {0.author.mention} has reported someone".format(message))
         rehan = await bot.get_user_info('310045671094747136')
         await bot.send_message(rehan, "The user {0.author.mention} has reported someone".format(message))
+        #tester = await bot.get_user_info('Tester ID')
+        #await bot.send_message(tester, "The user {0.author.mention} has reported someone".format(message))
         
     if message.content.upper().startswith('.HELLO'):
         await bot.send_message(message.channel,"Hello {0.author.mention}! :wave:".format(message))
