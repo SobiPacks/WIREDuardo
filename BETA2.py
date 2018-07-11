@@ -25,10 +25,7 @@ async def on_ready():
     #def __init__(self, bot):
         #self.bot = bot
 
-@bot.command(pass_context=True)
-async def poke(ctx, member: discord.Member):
-    await bot.send_message(mods, 'boop')
-    print("BOOP")
+
 @bot.event
 async def on_message(message):
     if message.content.upper().startswith('.REPORT'):
@@ -85,7 +82,10 @@ async def on_message(message):
 #( ͡° ͜ʖ ͡°)
 
     await bot.process_commands(message)
-
+@bot.command(pass_context=True)
+async def boop(ctx, message):
+    """Boops someone"""
+    await client.send_message(ctx.message.author, 'You have been booped by {0.author.mention}'.format(message))
 @bot.command(pass_context=True)
 async def boop(ctx, message):
     """Boops someone"""
