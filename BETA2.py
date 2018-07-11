@@ -86,7 +86,7 @@ async def on_message(message):
         
     if message.content.upper().startswith('.SPAM'):
         await bot.send_message(message.channel,"Initializing spam...")
-        time.sleep(3)
+        time.sleep(5)
         await bot.send_message(message.channel,"JK {0.author.mention}, please don't spam in the server!".format(message))
         
     #if message.content.upper().startswith(''):
@@ -103,22 +103,30 @@ async def info(ctx):
     embed.set_footer(text="Created by Robert Jefferson")
     await bot.say(embed=embed)
     print("Information accesed")
+    
 @bot.command(pass_context=True)
 async def rules(ctx):
     """Shows da rulez"""
+    
 @bot.command(pass_context=True)
 async def rule1(ctx):
     """Shows rule 1"""
+    
 @bot.command(pass_context=True)
 async def rule2(ctx):
     """Shows rule 2"""
+    
 @bot.command(pass_context=True)
 async def rule3(ctx):
     """Shows rule 3"""
+    
 @bot.command(pass_context=True)
 async def yt(ctx):
     """Link to Eddie's YouTube channel"""
 
+@bpt.command(pass_context=True)
+async def spam(ctx):
+    """A naughty command"""
 
 
 
