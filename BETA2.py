@@ -19,7 +19,7 @@ async def on_ready():
     print("Bot Online")
     print(rando)
     await bot.change_presence(game=discord.Game(name="Splatoon 2"))
-    #await bot.send_message(discord.Object(id='459871164974628886'), "BEEP BOOP")
+    await bot.send_message(discord.Object(id='459871164974628886'), "Version 1.3.0")
    
 #class Main_Commands():
     #def __init__(self, bot):
@@ -74,22 +74,15 @@ async def on_message(message):
     if message.content.upper().startswith('.PING'):
         await bot.send_message(message.channel,"PONG {0.author.mention}".format(message))
         
-    if message.content.upper().startswith('.COMMANDS'):
-        await bot.send_message(message.channel," .help: Shows this \n .rules : Displays the rules \n .rules(number of rule): Displays specific rules \n .yt: Link to Eddie's channel! \n .boop: Boops someone \n .info: Shows info about the bot")
+    #if message.content.upper().startswith('.COMMANDS'):
+        await bot.send_message(message.channel," .help: Shows this \n .rules : Displays the rules \n .rules(number of rule): Displays specific rules \n .yt: Link to Eddie's channel! \n .info: Shows info about the bot")
         
     #if message.content.upper().startswith(''):
         #await bot.send_message(message.channel,"")
 #( ͡° ͜ʖ ͡°)
 
     await bot.process_commands(message)
-@bot.command(pass_context=True)
-async def boop(ctx, message):
-    """Boops someone"""
-    await client.send_message(ctx.message.author, 'You have been booped by {0.author.mention}'.format(message))
-@bot.command(pass_context=True)
-async def boop(ctx, message):
-    """Boops someone"""
-    await client.send_message(ctx.message.author, 'Booped!')                           
+    
 @bot.command(pass_context=True)
 async def info(ctx):
     """Information about the bot"""
@@ -98,9 +91,24 @@ async def info(ctx):
     embed.set_footer(text="Created by Robert Jefferson")
     await bot.say(embed=embed)
     print("Information accesed")
-@bot.command
+@bot.command(pass_context=True)
 async def rules(ctx):
     """Shows da rulez"""
+@bot.command(pass_context=True)
+async def rule1(ctx):
+    """Shows rule 1"""
+@bot.command(pass_context=True)
+async def rule2(ctx):
+    """Shows rule 2"""
+@bot.command(pass_context=True)
+async def rule3(ctx):
+    """Shows rule 3"""
+@bot.command(pass_context=True)
+async def yt(ctx):
+    """Link to Eddie's YouTube channel"""
+
+
+
 
 #if __name__ == "__main__":
         #for extension in startup_extensions:
