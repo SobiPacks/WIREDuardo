@@ -77,8 +77,7 @@ async def on_message(message):
     if message.content.upper().startswith('.PING'):
         await bot.send_message(message.channel,"PONG {0.author.mention}".format(message))
         
-    if message.content.upper().startswith('.HELP'):
-        await bot.send_message(message.channel,"Displaying all commands...")
+    if message.content.upper().startswith('.COMMANDS'):
         await bot.send_message(message.channel," .help: Shows this \n .rules : Displays the rules \n .rules(number of rule): Displays specific rules \n .yt: Link to Eddie's channel! \n .boop: Boops someone \n .info: Shows info about the bot")
         
     #if message.content.upper().startswith(''):
