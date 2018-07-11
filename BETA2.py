@@ -19,7 +19,7 @@ async def on_ready():
     print("Bot Online")
     print(rando)
     await bot.change_presence(game=discord.Game(name="Splatoon 2"))
-    await bot.send_message(discord.Object(id='459871164974628886'), "BEEP BOOP")
+    #await bot.send_message(discord.Object(id='459871164974628886'), "BEEP BOOP")
    
 #class Main_Commands():
     #def __init__(self, bot):
