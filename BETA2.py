@@ -1,4 +1,5 @@
 import discord
+import time
 from discord.ext import commands
 from discord.ext.commands import Bot
 from discord.voice_client import VoiceClient
@@ -82,6 +83,11 @@ async def on_message(message):
         
     #if message.content.upper().startswith('.COMMANDS'):
         await bot.send_message(message.channel," .help: Shows this \n .rules : Displays the rules \n .rules(number of rule): Displays specific rules \n .yt: Link to Eddie's channel! \n .info: Shows info about the bot")
+        
+    if message.content.upper().startswith('.SPAM'):
+        await bot.send_message(message.channel,"Initializing spam...")
+        time.sleep(3)
+        await bot.send_message(message.channel,"JK {0.author.mention}, please don't spam in the server!".format(message))
         
     #if message.content.upper().startswith(''):
         #await bot.send_message(message.channel,"")
