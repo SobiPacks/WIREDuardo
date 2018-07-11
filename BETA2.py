@@ -37,6 +37,12 @@ async def on_message(message):
         await bot.send_message(henry, "The user {0.author.mention} has reported someone".format(message))
         rehan = await bot.get_user_info('310045671094747136')
         await bot.send_message(rehan, "The user {0.author.mention} has reported someone".format(message))
+        
+    if message.content.upper().startswith('.HELLO'):
+        await bot.send_message(message.channel,"Hello {0.author.mention}! :wave:".format(message))
+        
+    if message.content.upper().startswith('.BYE'):
+        await bot.send_message(message.channel,"Hope to see you again soon {0.author.mention}! ;o;".format(message))
 
     if message.content.upper().startswith('.RULES'):
         await bot.send_message(message.channel," #1 - Be respectul and kind towards others here. Anyone caught harassing or insulting others will receive a warning followed by a kick. \n #2 Dont advertise. Just dont. Its rude and annoying. \n #3 Keep all adult and nudity content away from here. Immediate ban for anyone posting obscenities. ")
