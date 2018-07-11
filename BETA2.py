@@ -9,7 +9,7 @@ mods = ["400055843787243531"]
 rando = randint(1,9)
 bypass_list = [""]
 chat_filter = ["OOGIEPOOGIENIGGERNOGGER"]
-#startup_extensions = ["Music"]
+startup_extensions = ["Music"]
 bot = commands.Bot(".")
 
 #459871164974628886 - living room
@@ -22,9 +22,9 @@ async def on_ready():
     await bot.change_presence(game=discord.Game(name="Splatoon 2"))
     #await bot.send_message(discord.Object(id='459871164974628886'), "Version 1.3.0")
    
-#class Main_Commands():
-    #def __init__(self, bot):
-        #self.bot = bot
+class Main_Commands():
+    def __init__(self, bot):
+        self.bot = bot
 
 
 @bot.event
@@ -36,8 +36,8 @@ async def on_message(message):
         await bot.send_message(rob, "The user {0.author.mention} has reported someone".format(message))
         henry = await bot.get_user_info('258675615194939392')
         await bot.send_message(henry, "The user {0.author.mention} has reported someone".format(message))
-        rehan = await bot.get_user_info('310045671094747136')
-        await bot.send_message(rehan, "The user {0.author.mention} has reported someone".format(message))
+        #rehan = await bot.get_user_info('310045671094747136')
+        #await bot.send_message(rehan, "The user {0.author.mention} has reported someone".format(message))
         #tester = await bot.get_user_info('Tester ID')
         #await bot.send_message(tester, "The user {0.author.mention} has reported someone".format(message))
         
@@ -140,12 +140,12 @@ async def spam(ctx):
 
 
 
-#if __name__ == "__main__":
-        #for extension in startup_extensions:
-            #try:
-                #bot.load_extension(extension)
-            #except Exception as e:
-                #exc = '(): ()'.format(type(e).__name__, e)
-                #print('Failed to load extension ()\n()'.format(extension, exc))
+if __name__ == "__main__":
+        for extension in startup_extensions:
+            try:
+                bot.load_extension(extension)
+            except Exception as e:
+                exc = '(): ()'.format(type(e).__name__, e)
+                print('Failed to load extension ()\n()'.format(extension, exc))
                 
 bot.run("NDYwOTQwNTg3NTUwNTA3MDY3.DhMgGQ.3CVkea3M2zYl5Wul4E3Fd6ER-iE")
