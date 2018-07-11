@@ -1,1 +1,1 @@
-worker: python BETA1.py
+worker: python BETA2.py
