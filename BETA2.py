@@ -44,7 +44,13 @@ async def on_message(message):
     if message.content.upper().startswith('.HELLO'):
         await bot.send_message(message.channel,"Hello {0.author.mention}! :wave:".format(message))
         
+    if message.content.upper().startswith('.HI'):
+        await bot.send_message(message.channel,"Hello {0.author.mention}! :wave:".format(message))        
+        
     if message.content.upper().startswith('.BYE'):
+        await bot.send_message(message.channel,"Hope to see you again soon {0.author.mention}! ;o;".format(message))
+        
+    if message.content.upper().startswith('.GOODBYE'):
         await bot.send_message(message.channel,"Hope to see you again soon {0.author.mention}! ;o;".format(message))
 
     if message.content.upper().startswith('.RULES'):
@@ -114,6 +120,7 @@ async def say(ctx, *args):
 
 @bot.command(pass_context = True)
 async def report(ctx, *args):
+    """Used to report someone. Usage: .report (@name and cause)"""
     mesg = ' '.join(args)
     me = await bot.get_user_info('400055843787243531')
     await bot.send_message(me, "The user {0.author.mention} has reported: {1}".format(ctx.message, mesg))
@@ -157,6 +164,10 @@ async def yt(ctx):
 @bot.command(pass_context=True)
 async def spam(ctx):
     """A naughty command."""
+    
+@bot.command(pass_context=True)
+async def ping(ctx):
+    """PONG"""
 
 
 
