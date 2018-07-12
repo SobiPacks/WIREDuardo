@@ -29,11 +29,11 @@ class Main_Commands():
 
 @bot.event
 async def on_message(message):
-    if message.content.upper().startswith('.REPORT'):
-        if message.author == bot.user:
-            return
-        rob = await bot.get_user_info('400055843787243531')
-        await bot.send_message(rob, "The user {0.author.mention} has reported someone".format(message))
+    #if message.content.upper().startswith('.REPORT'):
+        #if message.author == bot.user:
+            #return
+        #rob = await bot.get_user_info('400055843787243531')
+        #await bot.send_message(rob, "The user {0.author.mention} has reported someone".format(message))
         #henry = await bot.get_user_info('258675615194939392')
         #await bot.send_message(henry, "The user {0.author.mention} has reported someone".format(message))
         #rehan = await bot.get_user_info('310045671094747136')
@@ -111,7 +111,21 @@ async def say(ctx, *args):
     mesg = ' '.join(args)
     await bot.delete_message(ctx.message)
     return await bot.say(mesg)
+
+@bot.command(pass_context = True)
+async def report(ctx, *args):
+    mesg = ' '.join(args)
+    me = await bot.get_user_info('400055843787243531')
+    await bot.send_message(me, "The user {0.author.mention} has reported: {1}".format(ctx.message, mesg))
+
+    henry = await bot.get_user_info('263777506799124481')
+    await bot.send_message(henry, "The user {0.author.mention} has reported: {1}".format(ctx.message, mesg))
+
+    nick = await bot.get_user_info('263777506799124481')
+    await bot.send_message(nick, "The user {0.author.mention} has reported: {1}".format(ctx.message, mesg))
     
+    await bot.delete_message(ctx.message)
+
 @bot.command(pass_context=True)
 async def hello(ctx):
     """Salute the bot!"""
