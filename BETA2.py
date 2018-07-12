@@ -120,7 +120,7 @@ async def say(ctx, *args):
 
 @bot.command(pass_context = True)
 async def report(ctx, *args):
-    """Used to report someone. Usage: .report (@name and cause)"""
+    """Usage: .report (@name and cause)"""
     mesg = ' '.join(args)
     me = await bot.get_user_info('400055843787243531')
     await bot.send_message(me, "The user {0.author.mention} has reported: {1}".format(ctx.message, mesg))
@@ -130,6 +130,9 @@ async def report(ctx, *args):
 
     nick = await bot.get_user_info('263777506799124481')
     await bot.send_message(nick, "The user {0.author.mention} has reported: {1}".format(ctx.message, mesg))
+    
+    rehan = await bot.getuser_info('310045671094747136')
+    await bot.send_message(rehan, "The user {0.author.mention} has reported: {1}".format(ctx.message, mesg))
     
     await bot.delete_message(ctx.message)
 
